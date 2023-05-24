@@ -1,23 +1,22 @@
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Detail from "./Pages/Detail/Detail";
+import Footer from "./Components/Footer/Footer";
+import Main from "./Pages/Profile/Main";
 
-import './App.css';
-import Home from './Pages/Home/Home';
-import Detail from './Pages/Detail/Detail';
-import Profile from './Pages/Profile/Profile';
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-function App() {
+export default function App() {
   return (
-    
-      <BrowserRouter>
+    <BrowserRouter>
+      <div id="login" className="flex flex-col h-screen justify-between">
         <Routes>
-          <Route path={'/'} element={<Home/>}/>
-          <Route path={'/:id'} element={<Detail/>}/>
-          <Route path={'/profile'} element={<Profile/>}/>
+          <Route path={"/"} element={<Home />} />
+          <Route path={"/pokemon"} element={<Main />} />
+          <Route path={"/pokemon/:id"} element={<Detail />} />
         </Routes>
-      </BrowserRouter>
-    
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
