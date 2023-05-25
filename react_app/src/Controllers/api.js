@@ -20,6 +20,7 @@ export async function pedirPokemones(numero) {
             nombre: caracteristicas.name,
             tipo: caracteristicas.types.map((objeto) => objeto.type.name),
             imagen: caracteristicas.sprites.other.dream_world.front_default,
+            vida: caracteristicas.height
         };
     
         arrayDePokemones.push(pokemonBuscado);

@@ -11,8 +11,6 @@ export default function Detail() {
         buscarDetalle(paramId.id).then((res) => setDetail(res));
     },[]);
 
-    console.log(detail);
-
     return (
         <div id="login" className="">
             <NavBar />
@@ -27,21 +25,25 @@ export default function Detail() {
                     </h1>
 
                     <div className="columns-2 py-5">
-                        <div className=""> 
-                            <img src={detail.imagen} alt="" />
-                        </div>
+                        <div className="flex justify-center"> 
+                            <img src={detail.imagen} alt="Pokeimagen" className="w-4/5" />
+                        </div> 
 
                         <div className="px-10">
                             <h1 className="text-xl font-semibold">Tipo:</h1>
-                        <div>
-                            {detail.tipo?.map((tipo) => (
-                            <span key={detail.id} className="text-xl">
-                                {tipo.replace(tipo[0], tipo[0].toUpperCase())}{" "}
-                            </span>
-                            ))}
+                            <div>
+                                {detail.tipo?.map((tipo) => (
+                                <span key={detail.id} className="text-xl">
+                                    {tipo.replace(tipo[0], tipo[0].toUpperCase())}{" "}
+                                </span>
+                                ))}
+                            </div>
                         </div>
+                        <div>
+                            <h1>Vida: {detail.vida}</h1>
+                        </div>
+
                     </div>
-                </div>
                 </div>
             </div>
         </div>
