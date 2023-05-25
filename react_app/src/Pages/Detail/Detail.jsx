@@ -33,10 +33,6 @@ export default function Detail() {
                         </div> 
 
                         <div className="px-2">
-                            
-                            
-                            
-
                             <table className="">
                                 <thead >
                                     <tr className="border-b border-indigo-500">

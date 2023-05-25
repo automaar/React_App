@@ -12,6 +12,15 @@ export default function NavBar() {
         localStorage.removeItem("loggedUser");
         navigate("/");
     }
+    
+    function showProfile(e){
+        navigate("/Profile")
+    }
+
+    function Volver(e){
+        e.preventDefault()
+        navigate("/Pokemon")
+    }
 
     return (
         <Navbar
@@ -19,7 +28,7 @@ export default function NavBar() {
         fluid={true}
         rounded={true}
         >
-        <Navbar.Brand href="https://flowbite.com/">
+        <Navbar.Brand href="" onClick={(e)=>Volver(e)}>
             <img src={logoPikachu} className="mr-3 h-16" alt="Pokedex" />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             <b>Pokedex</b>
@@ -44,7 +53,7 @@ export default function NavBar() {
                 {loggedUser.email}
                 </span>
             </Dropdown.Header>
-            <Dropdown.Item>Perfil</Dropdown.Item>
+            <Dropdown.Item onClick={(e) => showProfile(e)}>Perfil</Dropdown.Item>
             <Dropdown.Item>Configuraciones</Dropdown.Item>
             <Dropdown.Item className="italic">By Marcos</Dropdown.Item>
 
@@ -55,13 +64,10 @@ export default function NavBar() {
             </Dropdown>
         </div>
         <Navbar.Collapse>
-            <Navbar.Link navigate="/pokemon" active={true}>
-            Home
+            <Navbar.Link active={true}>
+                Home
             </Navbar.Link>
-            <Navbar.Link>About</Navbar.Link>
-            <Navbar.Link>Services</Navbar.Link>
-            <Navbar.Link>Pricing</Navbar.Link>
-            <Navbar.Link>Contact</Navbar.Link>
+            <Navbar.Link>Main</Navbar.Link>
         </Navbar.Collapse>
         </Navbar>
     );
