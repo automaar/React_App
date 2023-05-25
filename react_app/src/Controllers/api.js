@@ -61,6 +61,11 @@ export async function pedirPokemones(numero) {
         nombre: caracteristicas.name,
         tipo: caracteristicas.types.map((objeto) => objeto.type.name),
         imagen: caracteristicas.sprites.other.dream_world.front_default,
+        vida: caracteristicas.height,
+        abilidad: caracteristicas.abilities.map((objeto) => objeto.ability.name),
+        exp: caracteristicas.base_experience,
+        imgPokeF: caracteristicas.sprites.front_default,
+        imgPokeB: caracteristicas.sprites.back_default
         };
     
         return pokemonBuscado;

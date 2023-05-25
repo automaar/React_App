@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Detail from "./Pages/Detail/Detail";
-import Footer from "./Components/Footer/Footer";
 import Main from "./Pages/Profile/Main";
 
 export default function App() {
@@ -15,7 +14,7 @@ export default function App() {
           <Route path={"/pokemon/:id"} element={<Detail />} />
         </Routes>
 
-        <Footer />
+        
       </div>
     </BrowserRouter>
   );

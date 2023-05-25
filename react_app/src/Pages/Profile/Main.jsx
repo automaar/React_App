@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
-import { pedirPokemones } from "../../Controllers/api";
-import { Spinner ,Pagination } from "flowbite-react";
+import { pedirPokemones, buscarDetalle } from "../../Controllers/api";
+import { Pagination } from "flowbite-react";
 import Loading from "../../Components/Loading/Loading";
 import Card from "../../Components/Card/Card"
+import Footer from "../../Components/Footer/Footer";
 
 export default function Main() {
     const [pokemones, setPokemones] = useState([]);
@@ -12,6 +13,9 @@ export default function Main() {
         pedirPokemones().then((res) => setPokemones(res));
     }, []);
 
+
+
+    
 
 
       //PAGINATION---
@@ -51,6 +55,8 @@ export default function Main() {
                         />))) : (<Loading />)}
                 </div>
             </div>
+
+            <Footer />
         </div>
     );
 }

@@ -62,15 +62,18 @@ export default function Home() {
     }
 
     return (
-            <div className="flex flex-col h-full items-center md:gap-16 lg:gap-10 bg-indigo-500 py-20 p-5 ">
-                <img src={banner} alt="logo" className="w-45 md:w-96 lg:w-96 p-0"/>
-                <form id="formulario" className="flex flex-col justify-center items-center w-72 h-72 lg:w-96 lg:h-96 rounded-full gap-10 bg-gray-300 " action="submit" onSubmit={(e) => loginHandler(e)}>
+            <div className="flex flex-col h-full items-center md:gap-16 lg:gap-10 bg-indigo-500 py-10 p-5 ">
+                <img src={banner} alt="logo" className="w-52 md:w-80 lg:w-80"/>
+                <form id="formulario" className="flex flex-col justify-center items-center w-72 h-72 lg:w-96 lg:h-96 rounded-full gap-10 bg-gray-300 " action="submit" 
+                    onSubmit={(e) => loginHandler(e)}>
+
                     <input id="email" name="email" className="w-7/12 rounded-full bg-opacity-50 bg-[#FE3929] "  type="email" placeholder="Ingresa tu email..."
-                    onChange={(e) => inputHandler(e)} />
+                    onChange={(e) => inputHandler(e)}/>
+
                     <button type="submit"
-                    className="flex items-center justify-center ring w-16 h-16 rounded-full bg-white hover:bg-[#FE3929]">
-                    
+                        className="flex items-center justify-center ring w-16 h-16 rounded-full bg-white hover:bg-[#FE3929]">
                     </button>
+
                     <input id="password" name="password" className="w-7/12 rounded-full bg-opacity-50 bg-[#A1A1A1]" type="password"  placeholder="Contraseña..."
                     onChange={(e) => inputHandler(e)}/>
                 </form>
